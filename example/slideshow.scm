@@ -1,6 +1,7 @@
-(use shell)
-(require-extension telebot
-                   (prefix telebot telebot:))
+(import (prefix telebot telebot:)
+	(chicken process-context)
+	(srfi-1)
+	(shell))
 
 (define admin "$user_id")
 (define sorry "I'm sorry Dave, I'm afraid I can't do that.")
