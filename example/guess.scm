@@ -1,12 +1,6 @@
 (import (prefix telebot telebot:)
 	(chicken process-context)
-	(srfi-1)
 	(chicken random))
-
-(define (resolve-query query tree)
-  (fold (lambda (x y) (alist-ref x y))
-        tree
-        query))
 
 (define (make-sender token chat_id)
   (lambda (text)
@@ -21,7 +15,7 @@
          (answer  (pseudo-random-integer 100)))
     (send "Hi there! I just generated a random number for you to guess!")
     (lambda (update)
-      (let* ((text  (resolve-query '(message text) update))
+      (let* ((text  (telebot:resolve-query '(message text) update))
              (guess (string->number text)))
         (print chat_id " -> \"" text "\"")
         (if (number? guess)
