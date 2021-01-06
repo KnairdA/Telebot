@@ -1,7 +1,6 @@
-(require-extension telebot
-                   (prefix telebot telebot:))
-
-(use data-structures)
+(import (prefix telebot telebot:)
+	(chicken process-context)
+	(srfi-1))
 
 (define (resolve-query query tree)
   (fold (lambda (x y) (alist-ref x y))
