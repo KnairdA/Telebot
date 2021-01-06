@@ -5,7 +5,7 @@
 (define (make-sender token chat_id)
   (lambda (text)
     (print chat_id " <- \"" text "\"")
-    (telebot:sendMessage token
+    (telebot:send-message token
                          chat_id: chat_id
                          text:    text)))
 
