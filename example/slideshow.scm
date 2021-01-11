@@ -41,7 +41,7 @@
                 (else                    (send sorry)))
           (send sorry))))))
 
-(let* ((token    (car (command-line-arguments)))
+(let* ((token    (cadr (command-line-arguments)))
        (converse (telebot:make-conversation-manager token
                                                     make-conversation)))
   (telebot:poll-updates token converse))
