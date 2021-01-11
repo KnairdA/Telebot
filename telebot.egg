@@ -6,7 +6,7 @@
                openssl
                http-client
                medea
-               vector-lib)
+               srfi-133)
 
  (author   "Adrian Kummerländer")
  (synopsis "Basic wrapper of the Telegram Bot API.")

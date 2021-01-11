@@ -41,7 +41,7 @@
   (import openssl
           http-client)
   (import medea
-          vector-lib)
+          (only srfi-133 vector-for-each))
 
   (define-constant api-base "https://api.telegram.org/bot")
 
@@ -288,7 +288,7 @@
   (define (poll-updates token handler)
     (let ((offset 0))
       (let loop ()
-        (vector-for-each (lambda (i u)
+        (vector-for-each (lambda (u)
                            (handler u)
                            (set! offset (+ 1 (alist-ref 'update_id u))))
                          (alist-ref 'result
