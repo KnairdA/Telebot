@@ -75,4 +75,3 @@ The only missing method is `setWebhook` as this kind of interfacing with _Telegr
 * [http-client](http://wiki.call-cc.org/eggref/4/http-client)
 * [medea](http://wiki.call-cc.org/eggref/4/medea)
 * [loops](http://wiki.call-cc.org/eggref/4/loops)
-* [vector-lib](http://wiki.call-cc.org/eggref/4/vector-lib)
