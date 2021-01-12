@@ -26,7 +26,7 @@
                 ((> guess answer) (send "Too large. Try again.")))
           (send "This is not a number - please provide your guess in base 10."))))))
 
-(let* ((token    (car (command-line-arguments)))
+(let* ((token    (cadr (command-line-arguments)))
        (converse (telebot:make-conversation-manager token
                                                     make-conversation)))
   (set-pseudo-random-seed! (random-bytes))

@@ -1,7 +1,7 @@
 (import (prefix telebot telebot:)
 	(chicken process-context))
 
-(define token (car (command-line-arguments)))
+(define token (cadr (command-line-arguments)))
 
 (define (print-message msg)
   (print (telebot:resolve-query '(message from first_name) msg)
